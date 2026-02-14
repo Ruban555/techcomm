@@ -1,0 +1,135 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Success</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .success-container {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .success-icon {
+        color:#27ae60;
+        font-size: 60px;
+        margin-bottom: 20px;
+        animation: scaleIn 0.5s ease-out;
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      h1 {
+        color: #27ae60;
+        margin-bottom: 15px;
+        font-size: 28px;
+      }
+
+      p {
+        color: #555;
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .message {
+        background: #e8f8f5;
+        color: #27ae60;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border-left: 4px solid #27ae60;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 10px;
+      }
+
+      a,
+      button {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn-secondary {
+        background: #f0f0f0;
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-secondary:hover {
+        background: #e0e0e0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="success-container">
+      <div class="success-icon">✓</div>
+      <h1>Sign Up Successful!</h1>
+      <p th:text="${message}">Your signup has been completed successfully.</p>
+
+      <div class="message">
+        <strong>Thank you for registering!</strong><br />
+        Your information has been saved to our database.
+      </div>
+
+      <p>You can now signup again or go back to home page.</p>
+
+      <div class="button-group">
+        <a href="/signup" class="btn-secondary">Sign Up Again</a>
+        <a href="/h" class="btn-primary">Go Home</a>
+      </div>
+    </div>
+  </body>
+</html>
