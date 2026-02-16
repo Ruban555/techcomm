@@ -1,0 +1,308 @@
+.community-page {
+  min-height: calc(100vh - 80px);
+  background: #f5f5f5;
+}
+
+.community-header {
+  background: linear-gradient(135deg, #F5C26B 0%, #E0A84E 100%);
+  color: #121212;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.community-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.community-header p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.member-count {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.community-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
+.community-sidebar {
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 16px;
+  height: fit-content;
+  box-shadow: var(--shadow-md);
+}
+
+.community-sidebar h3 {
+  margin: 0 0 1.5rem 0;
+  color: var(--body-text);
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--highlight-gold);
+  padding-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.community-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.community-btn {
+  background: none;
+  border: 2px solid var(--border-light);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  color: var(--body-text);
+  transition: all 0.3s ease;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.community-btn:hover {
+  border-color: var(--highlight-gold);
+  background-color: var(--primary-bg);
+  color: #121212;
+}
+
+.community-btn.active {
+  background: linear-gradient(135deg, #E0A84E 0%, var(--highlight-gold) 100%);
+  color: white;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.community-btn .icon {
+  font-size: 1.3rem;
+}
+
+.community-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.community-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.community-section h2 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.jobs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.job-card {
+  border: 2px solid #e0e0e0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.job-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  transform: translateY(-4px);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.job-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+  flex: 1;
+}
+
+.posted {
+  background: #e8f0ff;
+  color: #667eea;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.job-card .company {
+  color: #666;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.job-card .salary {
+  color: #667eea;
+  font-weight: 600;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.view-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #E0A84E;
+  color: #121212;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.view-btn:hover {
+  transform: scale(1.02);
+  background: var(--highlight-gold);
+}
+
+.discussions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.discussion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  border: 2px solid var(--border-light);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.discussion-item:hover {
+  border-color: var(--highlight-gold);
+  background-color: var(--primary-bg);
+}
+
+.discussion-content h4 {
+  margin: 0;
+  color: var(--body-text);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.replies-count {
+  color: var(--light-text);
+  font-size: 0.85rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.discussion-btn {
+  background: var(--highlight-gold);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.discussion-btn:hover {
+  background: #121212;
+  transform: translateX(4px);
+}
+
+.discussion-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--body-text);
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.replies-count {
+  color: var(--light-text);
+  font-size: 0.85rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.discussion-btn {
+  background: var(--highlight-gold);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.discussion-btn:hover {
+  background: #121212;
+  transform: translateX(4px);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #667eea;
+  transition: all 0.3s ease;
+}
+
+.discussion-btn:hover {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .community-container {
+    grid-template-columns: 1fr;
+  }
+
+  .community-sidebar {
+    display: none;
+  }
+
+  .community-header h1 {
+    font-size: 2rem;
+  }
+
+  .jobs-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.no-content {
+  grid-column: 1 / -1;
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+  background: #f8f9fa;
+  border-radius: 8px;
+}

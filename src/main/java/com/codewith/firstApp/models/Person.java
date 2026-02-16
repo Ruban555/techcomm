@@ -13,12 +13,19 @@ public class Person {
 
     private String name;
     private String email;
+    private String password;
 
     public Person() {}
 
     public Person(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public Person(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
     }
 
     public Long getId() {
@@ -43,5 +50,13 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

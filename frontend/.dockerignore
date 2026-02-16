@@ -1,0 +1,6 @@
+# Build frontend
+RUN npm install
+RUN npm run build
+
+# Copy to backend static folder
+COPY build/ /app/src/main/resources/static/
