@@ -14,9 +14,9 @@ function Messaging({ isOpen, onClose, user }) {
       fetchCommunities();
       fetchMessages();
     }
-  }, [isOpen]);
+  }, [isOpen, fetchCommunities, fetchMessages]);
 
-  const fetchCommunities = async () => {
+  const fetchCommunities = useCallback(async () => {
     try {
       const response = await fetch('http://localhost:8080/api/communities');
       if (response.ok) {
@@ -29,9 +29,9 @@ function Messaging({ isOpen, onClose, user }) {
     } catch (err) {
       console.error('Error fetching communities:', err);
     }
-  };
+  }, [selectedCommunityId]);
 
-  const fetchMessages = async () => {
+  const fetchMessages = useCallback(async () => {
     try {
       const response = await fetch('http://localhost:8080/api/messages');
       if (response.ok) {
@@ -41,7 +41,7 @@ function Messaging({ isOpen, onClose, user }) {
     } catch (err) {
       console.error('Error fetching messages:', err);
     }
-  };
+  }, []);
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
@@ -63,7 +63,7 @@ function Messaging({ isOpen, onClose, user }) {
         },
         body: JSON.stringify(messagePayload),
       });
-      
+
       if (response.ok) {
         const savedMessage = await response.json();
         setMessages([...messages, savedMessage]);
@@ -76,7 +76,7 @@ function Messaging({ isOpen, onClose, user }) {
     }
   };
 
-  const filteredMessages = selectedCommunityId 
+  const filteredMessages = selectedCommunityId
     ? messages.filter(msg => msg.communityId === selectedCommunityId)
     : messages;
 
@@ -94,7 +94,7 @@ function Messaging({ isOpen, onClose, user }) {
           <aside className="community-filter">
             <h3>Communities</h3>
             {communities.map(community => (
-              <button 
+              <button
                 key={community.id}
                 className={`filter-btn ${selectedCommunityId === community.id ? 'active' : ''}`}
                 onClick={() => setSelectedCommunityId(community.id)}
